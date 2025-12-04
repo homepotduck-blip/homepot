@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>慢燉圍爐薑母鴨｜在家也有圍爐的味道</title>
+  <style>
+    /* 全站基本設定 */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", sans-serif;
+    }
+
+    body {
+      line-height: 1.6;
+      background-color: #f8f5f0;
+      color: #333;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* 頂部導覽列 */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid #eee;
+      backdrop-filter: blur(8px);
+    }
+
+    .nav {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.12em;
+    }
+
+    .logo span {
+      color: #b7572a;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      padding: 4px 8px;
+      border-radius: 999px;
+    }
+
+    .nav-links a:hover {
+      background-color: #f0e4d7;
+    }
+
+    /* 共用區塊容器 */
+    .section {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 40px 16px;
+    }
+
+    /* Hero 區塊 */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 32px;
+      align-items: center;
+      padding-top: 32px;
+      padding-bottom: 40px;
+    }
+
+    .hero-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: #3c2a1a;
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      margin-bottom: 16px;
+      color: #6a4b33;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .tag {
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background-color: #f3e3cf;
+      color: #6a4b33;
+    }
+
+    .hero-note {
+      font-size: 0.9rem;
+      color: #777;
+      margin-bottom: 20px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .btn-primary {
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: none;
+      background: #b7572a;
+      color: #fff;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+    }
+
+    .btn-primary:hover {
+      background: #a04b23;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.16);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid #b7572a;
+      background: transparent;
+      color: #b7572a;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.1s ease, color 0.1s ease;
+    }
+
+    .btn-outline:hover {
+      background: #f3e3cf;
+    }
+
+    .hero-small {
+      font-size: 0.85rem;
+      color: #777;
+    }
+
+    .hero-card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+      border: 1px solid #f0e4d7;
+    }
+
+    .hero-card-title {
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #3c2a1a;
+    }
+
+    .hero-list {
+      list-style: none;
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+    }
+
+    .hero-list li {
+      margin-bottom: 6px;
+    }
+
+    .hero-highlight {
+      font-size: 0.9rem;
+      color: #b7572a;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+
+    /* 小標題區塊 */
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #3c2a1a;
+    }
+
+    .section-subtitle {
+      font-size: 0.95rem;
+      color: #777;
+      margin-bottom: 24px;
+    }
+
+    /* 三欄特色 */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .feature-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 16px 16px 18px;
+      border: 1px solid #f0e4d7;
+    }
+
+    .feature-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #3c2a1a;
+    }
+
+    .feature-text {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    /* 商品內容區 */
+    .product {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 16px;
+      border: 1px solid #f0e4d7;
+    }
+
+    .product-card h3 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+      color: #3c2a1a;
+    }
+
+    .product-card ul {
+      list-style: none;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .product-card ul li {
+      margin-bottom: 4px;
+    }
+
+    .product-note {
+      font-size: 0.8rem;
+      color: #777;
+      margin-top: 4px;
+    }
+
+    .price-box {
+      background: #3c2a1a;
+      color: #f8f5f0;
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .price-main {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .price-sub {
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+    }
+
+    .price-tip {
+      font-size: 0.8rem;
+    }
+
+    /* 訂購流程 */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .step-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 16px;
+      border: 1px solid #f0e4d7;
+      font-size: 0.9rem;
+      position: relative;
+    }
+
+    .step-number {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      font-size: 0.85rem;
+      color: #b7572a;
+      font-weight: 700;
+    }
+
+    .step-title {
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #3c2a1a;
+    }
+
+    /* 聯絡方式區 */
+    .contact-box {
+      background: #fff;
+      border-radius: 18px;
+      padding: 20px 16px;
+      border: 1px solid #f0e4d7;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .contact-list {
+      list-style: none;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .contact-list li {
+      margin-bottom: 6px;
+    }
+
+    .contact-label {
+      font-weight: 600;
+      color: #3c2a1a;
+    }
+
+    .contact-note {
+      font-size: 0.8rem;
+      color: #777;
+      margin-top: 4px;
+    }
+
+    .contact-highlight {
+      font-size: 0.9rem;
+      color: #b7572a;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid #e0d4c7;
+      padding: 16px;
+      font-size: 0.8rem;
+      color: #777;
+      text-align: center;
+    }
+
+    /* RWD 手機版調整 */
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .product {
+        grid-template-columns: 1fr;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none; /* 手機就先隱藏選單，簡單一點 */
+      }
+
+      .hero-title {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 導覽列 -->
+  <header>
+    <div class="nav">
+      <div class="logo">
+        慢燉<span>圍爐</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#about">品牌理念</a>
+        <a href="#product">商品內容</a>
+        <a href="#order">訂購方式</a>
+        <a href="#contact">聯絡我們</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero 區 -->
+  <section class="section" id="top">
+    <div class="hero">
+      <div>
+        <h1 class="hero-title">在家也有圍爐的味道</h1>
+        <p class="hero-subtitle">
+          慢火細燉薑母鴨，熬出一鍋暖到心裡的湯。<br>
+          不用備料、不用顧火，只要一鍋就能把家人聚在一起。
+        </p>
+
+        <div class="hero-tags">
+          <span class="tag">冷凍宅配</span>
+          <span class="tag">6 人份湯底</span>
+          <span class="tag">附 5 款經典配料</span>
+          <span class="tag">在家輕鬆圍爐</span>
+        </div>
+
+        <p class="hero-note">
+          適合圍爐、送禮、同事揪團，冰箱裡隨時準備一鍋，想吃就吃。
+        </p>
+
+        <div class="hero-actions">
+
+  <!-- 按鈕 1：打開慢燉圍爐官方 LINE 聊天室 -->
+  <a href="https://line.me/ti/p/@081ohaxa" target="_blank">
+    <button class="btn-primary">用 LINE 訂購</button>
+  </a>
+
+  <!-- 按鈕 2：一鍵複製訂購填寫單 -->
+  <button class="btn-outline" onclick="copyOrderTemplate()">
+    複製訂購填寫單
+  </button>
+
+</div>
+
+
+        <p class="hero-small">目前提供：台灣本島冷凍宅配（黑貓/低溫宅配）。</p>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-card-title">慢燉圍爐薑母鴨禮盒內容</div>
+        <ul class="hero-list">
+          <li>・6 人份薑母鴨湯底（含鴨肉）</li>
+          <li>・5 種精選配料：鴨肉丸、雪鴨卷、鴨肉燕餃、凍豆腐、米血糕</li>
+          <li>・冷凍保存，想吃什麼時候煮都可以</li>
+          <li>・附簡單料理說明，新手也不會失手</li>
+        </ul>
+        <div class="hero-highlight">
+          一盒就足夠一家人圍著餐桌，慢慢聊、慢慢吃。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 品牌理念 -->
+  <section class="section" id="about">
+    <h2 class="section-title">品牌理念｜慢燉，為了等那一桌人齊</h2>
+    <p class="section-subtitle">
+      我們相信，好吃的不是多花俏的料理，而是一鍋願意花時間去準備、只為了和重要的人一起吃的湯。
+      慢燉圍爐，把繁瑣的備料、久煮的工夫先為你做好，只留下那一刻拿起碗筷、彼此說話的時間。
+    </p>
+
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-title">真材實料</div>
+        <p class="feature-text">
+          嚴選食材，堅持使用非基改凍豆腐與品質穩定的鴨肉，湯底實實在在看得到的料，不偷工、不省料。
+        </p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-title">慢火熬煮</div>
+        <p class="feature-text">
+          事先熬煮好湯底，保留薑香與鴨油的層次感，回家只要加熱、加入喜歡的蔬菜，就能快速上桌。
+        </p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-title">為家設計</div>
+        <p class="feature-text">
+          一盒 6 人份，適合小家庭、朋友聚會，也能一次多盒送禮，冰在冷凍庫，想聚就聚，不需特別大費周章。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 商品內容 -->
+  <section class="section" id="product">
+    <h2 class="section-title">商品內容｜一盒裡面有什麼？</h2>
+    <p class="section-subtitle">
+      慢燉圍爐薑母鴨禮盒，是為「實際好用」設計，而不是只為了好看。
+    </p>
+
+    <div class="product">
+      <div>
+        <div class="product-card">
+          <h3>湯底與配料</h3>
+          <ul>
+            <li>・薑母鴨湯底 x 1 包（約 6 人份，內含鴨肉）</li>
+            <li>・鴨肉丸 x 1 包</li>
+            <li>・雪鴨卷 x 1 包</li>
+            <li>・鴨肉燕餃 x 1 包</li>
+            <li>・非基改凍豆腐 x 1 包</li>
+            <li>・米血糕 x 1 包</li>
+          </ul>
+          <p class="product-note">
+            ※ 實際規格以當季調整為準，出貨前會在訂購訊息中再次確認。
+          </p>
+        </div>
+
+        <div class="product-card" style="margin-top: 12px;">
+          <h3>建議加購/自備</h3>
+          <ul>
+            <li>・高麗菜、金針菇、青江菜等蔬菜</li>
+            <li>・冬粉、王子麵或白飯</li>
+            <li>・喜歡更辣的可再加老薑或辣油</li>
+          </ul>
+          <p class="product-note">
+            我們專心把湯底和主角準備好，蔬菜依照你們全家的喜好自己搭配即可。
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="price-box">
+          <div class="price-main">慢燉圍爐薑母鴨禮盒</div>
+          <div class="price-sub">6 人份湯底 + 5 種配料（冷凍宅配出貨）</div>
+          <!-- 這裡可以填上你的實際售價 -->
+          <p style="font-size: 1.2rem; font-weight: 700; margin-bottom: 4px;">
+            建議售價：NT$ 1180 / 盒
+          </p>
+          <p class="price-tip">
+            團購、企業送禮、大量訂購歡迎私訊詢問，我們會依數量提供合適方案。
+          </p>
+        </div>
+
+        <div class="product-card" style="margin-top: 12px;">
+          <h3>保存與加熱方式</h3>
+          <ul>
+            <li>・保存方式：冷凍 -18°C 以下</li>
+            <li>・保存期限：以包裝標示有效日期為準</li>
+            <li>・加熱方式：退冰後倒入鍋中小火加熱至滾，加入配料與蔬菜再煮熟即可</li>
+          </ul>
+          <p class="product-note">
+            盒內附簡易說明，新手也能煮出一鍋好喝的薑母鴨。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 訂購方式 -->
+  <section class="section" id="order">
+    <h2 class="section-title">訂購方式｜三步驟，在家等鍋上桌</h2>
+    <p class="section-subtitle">
+      目前採預訂制，我們依照訂單安排熬煮與出貨，確保品質穩定。
+    </p>
+
+    <div class="steps">
+      <div class="step-card">
+        <div class="step-number">STEP 1</div>
+        <div class="step-title">透過 LINE / 表單下單</div>
+        <p>
+          加入官方 LINE，或填寫訂購表單，留下：<br>
+          ・姓名 / 收件人<br>
+          ・電話<br>
+          ・收件地址<br>
+          ・訂購數量與預計收貨日期
+        </p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">STEP 2</div>
+        <div class="step-title">確認訂單與匯款</div>
+        <p>
+          我們會回覆總金額、匯款帳號與預計出貨日。<br>
+          完成匯款後，截圖回傳，我們即排入製作與出貨。
+        </p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">STEP 3</div>
+        <div class="step-title">冷凍黑貓宅配到府</div>
+        <p>
+          採冷凍宅配寄出，收到後請直接冷凍保存。<br>
+          想吃當天再移到冷藏或提前退冰，照說明加熱即可開鍋。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 聯絡我們 -->
+  <section class="section" id="contact">
+    <h2 class="section-title">聯絡我們｜慢燉食補有限公司</h2>
+    <p class="section-subtitle">
+      如果你對產品有任何問題、想了解團購或企業送禮方案，都歡迎直接訊息我們。
+    </p>
+
+    <div class="contact-box">
+      <div>
+        <div class="contact-highlight">目前主要以 LINE 與表單接單為主。</div>
+        <ul class="contact-list">
+          <li>
+            <span class="contact-label">LINE 官方帳號：</span>
+            <!-- 這裡換成你的實際 LINE ID 或加入連結 -->
+            @081ohaxa
+          </li>
+          <li>
+            <span class="contact-label">Email：</span>
+            <!-- 可以換成你想公開的信箱 -->
+            homepot.duck@gmail.com
+          </li>
+          <li>
+            <span class="contact-label">Instagram / Facebook：</span>
+            homepot_duck
+          </li>
+          <li>
+            <span class="contact-label">服務地區：</span>
+            目前提供7-11店到店、台灣本島冷凍宅配，外島運費另議、自取私訊老闆
+          </li>
+        </ul>
+        <p class="contact-note">
+          實際出貨時間依季節與訂單量調整，重要節日（如中秋、過年）建議提前預訂。
+        </p>
+      </div>
+
+      <div>
+        <div class="product-card">
+          <h3>想不到送什麼禮？</h3>
+          <p style="font-size: 0.9rem; color: #555;">
+            薑母鴨禮盒是不會放在角落生灰塵的禮物。<br>
+            適合送給：<br>
+            ・合作客戶 / 公司年節禮盒<br>
+            ・長輩、親戚、外地念書的小孩<br>
+            ・揪團一起訂的朋友們<br><br>
+            一盒一鍋故事，有任何客製需求可以跟我們聊聊。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    慢燉食補有限公司 ｜ 慢燉圍爐薑母鴨  
+    <br>本頁為示意一頁式官網，可依實際營運資訊調整內容。
+  </footer>
+  <script>
+    function copyOrderTemplate() {
+      const text = `🦆 慢燉圍爐｜訂購填寫單
+
+禮盒內容：
+🍲 薑母鴨湯底 2 盒（每盒約 3人份）
+🫕 5 種人氣配料：鴨肉丸、雪鴨卷、鴨肉燕餃、凍豆腐、米血糕
+薑母鴨冷凍禮盒 $1180 元
+請填寫以下資訊，我們會盡快與您確認訂單 🙌
+匯款完成後3-10天左右貨到門市
+
+📋 訂購人資料
+姓名：
+電話：
+Email:
+
+📦 訂購品項
+（可自行填寫數量）
+1.薑母鴨冷凍禮盒（內附5種配料）：  份
+滿足就是要加購：
+2.鴨肉丸$89： 份
+3.鴨肉燕餃$119： 份
+4.米血糕$49： 份
+5.雪鴨卷$119：份
+6.凍豆腐$69：份`;
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text)
+          .then(function () {
+            alert('已複製訂購填寫單，請到 LINE 聊天視窗長按貼上即可。');
+          })
+          .catch(function () {
+            fallbackCopy(text);
+          });
+      } else {
+        fallbackCopy(text);
+      }
+    }
+
+    function fallbackCopy(text) {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        alert('已複製訂購填寫單，請到 LINE 聊天視窗長按貼上即可。');
+      } catch (err) {
+        alert('無法自動複製，請手動選取文字複製。');
+      }
+      document.body.removeChild(textarea);
+    }
+  </script>
+
+</body>
+</html>
